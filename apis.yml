@@ -1,0 +1,92 @@
+aid: microsoft-dynamics-365-business-central
+name: Microsoft Dynamics 365 Business Central
+description: >-
+  Microsoft Dynamics 365 Business Central is an all-in-one cloud ERP solution
+  for small and mid-sized businesses that brings together finance, sales,
+  service, project management, supply chain, manufacturing, and operations on
+  the Microsoft Cloud. Business Central exposes a standard REST API (v2.0)
+  plus custom and OData web services so partners can build Connect apps,
+  automate processes, and integrate Business Central with Power Platform and
+  third-party systems using OAuth 2.0 authentication via Microsoft Entra ID.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - ERP
+  - Cloud ERP
+  - Finance
+  - Accounting
+  - Supply Chain
+  - Operations
+  - Small Business
+  - Mid-Market
+  - Microsoft Dynamics 365
+url: https://raw.githubusercontent.com/api-evangelist/microsoft-dynamics-365-business-central/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: microsoft-dynamics-365-business-central:api-v2
+    name: Business Central API (v2.0)
+    description: >-
+      Standard REST API (v2.0) for Dynamics 365 Business Central exposing
+      entities such as customers, vendors, items, sales and purchase documents,
+      and journals. Authenticates with OAuth 2.0 via Microsoft Entra ID and
+      supports both delegated user and service-to-service flows.
+    humanURL: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+    baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+    tags:
+      - REST
+      - OAuth 2.0
+      - Entra ID
+      - Connect Apps
+      - Standard Entities
+    properties:
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+      - type: OpenAPI
+        url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/dynamics-open-api
+      - type: Authentication
+        url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
+  - aid: microsoft-dynamics-365-business-central:odata-web-services
+    name: Business Central OData Web Services
+    description: >-
+      OData v4 endpoints exposing published Business Central pages and queries
+      as web services for custom integrations, reporting, and Power Platform
+      connectors when standard API v2.0 entities are insufficient.
+    humanURL: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services
+    baseURL: https://api.businesscentral.dynamics.com/v2.0/{tenant}/{environment}/ODataV4
+    tags:
+      - OData
+      - Web Services
+      - Pages
+      - Queries
+    properties:
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services
+  - aid: microsoft-dynamics-365-business-central:admin-center-api
+    name: Business Central Administration Center API
+    description: >-
+      Administration Center REST API for managing Business Central environments,
+      tenants, telemetry, update settings, and notifications programmatically
+      for ISVs and delegated administrators.
+    humanURL: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-center-api
+    baseURL: https://api.businesscentral.dynamics.com/admin/v2.x
+    tags:
+      - Administration
+      - Tenant Management
+      - Environments
+    properties:
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-center-api
+common:
+  - type: Website
+    url: https://www.microsoft.com/en-us/dynamics-365/products/business-central
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/business-central/
+  - type: Pricing
+    url: https://www.microsoft.com/en-us/dynamics-365/products/business-central/pricing
+  - type: Sign Up
+    url: https://signup.microsoft.com/get-started/signup?products=22b1949b-c5dd-4b06-9c19-1d2fa17e7a9d
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
