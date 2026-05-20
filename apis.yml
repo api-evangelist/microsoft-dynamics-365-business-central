@@ -79,6 +79,8 @@ apis:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-center-api
 common:
+  - type: GitHubOrganization
+    url: https://github.com/microsoft
   - type: Website
     url: https://www.microsoft.com/en-us/dynamics-365/products/business-central
   - type: Documentation
