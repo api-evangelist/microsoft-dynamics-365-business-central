@@ -87,7 +87,7 @@ common:
     url: https://learn.microsoft.com/en-us/dynamics365/business-central/
   - type: Pricing
     url: https://www.microsoft.com/en-us/dynamics-365/products/business-central/pricing
-  - type: SignUp
+  - type: Signup
     url: https://signup.microsoft.com/get-started/signup?products=22b1949b-c5dd-4b06-9c19-1d2fa17e7a9d
 maintainers:
   - FN: Kin Lane
