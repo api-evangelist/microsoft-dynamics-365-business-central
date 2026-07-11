@@ -79,6 +79,8 @@ apis:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-center-api
 common:
+  - type: OAuthScopes
+    url: scopes/microsoft-dynamics-365-business-central-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/microsoft
   - type: Website
@@ -89,6 +91,8 @@ common:
     url: https://www.microsoft.com/en-us/dynamics-365/products/business-central/pricing
   - type: Signup
     url: https://signup.microsoft.com/get-started/signup?products=22b1949b-c5dd-4b06-9c19-1d2fa17e7a9d
+  - url: https://www.microsoft.com/en-us/dynamics-365/blog/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
