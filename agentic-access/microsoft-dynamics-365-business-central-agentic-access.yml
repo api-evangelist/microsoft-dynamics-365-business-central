@@ -1,0 +1,371 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/microsoft-dynamics-365-business-central-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 26
+  by_action_class:
+    connected: 12
+    acting: 14
+  by_consequence:
+    read: 12
+    write: 9
+    physical: 5
+  human_in_the_loop_required: 0
+operations:
+- path: /companies
+  method: get
+  operationId: companies_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /companies({id})
+  method: get
+  operationId: companies_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /companies({companyId})/customers
+  method: get
+  operationId: customers_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /companies({companyId})/customers
+  method: post
+  operationId: customers_create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/customers({id})
+  method: get
+  operationId: customers_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /companies({companyId})/customers({id})
+  method: patch
+  operationId: customers_update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/customers({id})
+  method: delete
+  operationId: customers_delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/vendors
+  method: get
+  operationId: vendors_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /companies({companyId})/vendors
+  method: post
+  operationId: vendors_create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/vendors({id})
+  method: get
+  operationId: vendors_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /companies({companyId})/vendors({id})
+  method: patch
+  operationId: vendors_update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/vendors({id})
+  method: delete
+  operationId: vendors_delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/items
+  method: get
+  operationId: items_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /companies({companyId})/items
+  method: post
+  operationId: items_create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/items({id})
+  method: get
+  operationId: items_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /companies({companyId})/items({id})
+  method: patch
+  operationId: items_update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/items({id})
+  method: delete
+  operationId: items_delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/salesOrders
+  method: get
+  operationId: salesOrders_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /companies({companyId})/salesOrders
+  method: post
+  operationId: salesOrders_create
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/salesOrders({id})
+  method: get
+  operationId: salesOrders_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /companies({companyId})/salesOrders({id})
+  method: patch
+  operationId: salesOrders_update
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/salesOrders({id})
+  method: delete
+  operationId: salesOrders_delete
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/salesInvoices
+  method: get
+  operationId: salesInvoices_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /companies({companyId})/salesInvoices
+  method: post
+  operationId: salesInvoices_create
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /companies({companyId})/purchaseOrders
+  method: get
+  operationId: purchaseOrders_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /companies({companyId})/purchaseOrders
+  method: post
+  operationId: purchaseOrders_create
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
