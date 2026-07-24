@@ -1,0 +1,115 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Dynamics 365 Business Central API v2.0 Companies API
+  description: 'Standard REST API (v2.0) for Microsoft Dynamics 365 Business Central.
+
+    Exposes Business Central entities such as companies, customers, vendors,
+
+    items, sales documents, purchase documents, and journals via an OData v4
+
+    interface. Authentication uses OAuth 2.0 (Microsoft Entra ID) bearer
+
+    tokens supporting both delegated user and service-to-service flows.
+
+
+    URLs follow the pattern:
+
+    https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+
+    '
+  version: v2.0
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+  license:
+    name: Microsoft Terms of Use
+    url: https://www.microsoft.com/en-us/legal/terms-of-use
+servers:
+- url: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+  description: Business Central production environment
+  variables:
+    environment:
+      default: production
+      description: Business Central environment name
+security:
+- oauth2: []
+tags:
+- name: Companies
+  description: Business Central company entities
+paths:
+  /companies:
+    get:
+      tags:
+      - Companies
+      summary: List companies
+      operationId: companies_list
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyCollection'
+  /companies({id}):
+    get:
+      tags:
+      - Companies
+      summary: Get a company
+      operationId: companies_get
+      parameters:
+      - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company'
+components:
+  schemas:
+    CompanyCollection:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Company'
+    Company:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        systemVersion:
+          type: string
+        name:
+          type: string
+        displayName:
+          type: string
+        businessProfileId:
+          type: string
+        systemCreatedAt:
+          type: string
+          format: date-time
+        systemModifiedAt:
+          type: string
+          format: date-time
+  parameters:
+    id:
+      name: id
+      in: path
+      required: true
+      description: GUID identifier
+      schema:
+        type: string
+        format: uuid
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: Microsoft Entra ID OAuth 2.0
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            https://api.businesscentral.dynamics.com/.default: Business Central API access

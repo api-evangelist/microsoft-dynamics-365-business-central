@@ -1,0 +1,86 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Dynamics 365 Business Central API v2.0 Companies SalesInvoices API
+  description: 'Standard REST API (v2.0) for Microsoft Dynamics 365 Business Central.
+
+    Exposes Business Central entities such as companies, customers, vendors,
+
+    items, sales documents, purchase documents, and journals via an OData v4
+
+    interface. Authentication uses OAuth 2.0 (Microsoft Entra ID) bearer
+
+    tokens supporting both delegated user and service-to-service flows.
+
+
+    URLs follow the pattern:
+
+    https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+
+    '
+  version: v2.0
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+  license:
+    name: Microsoft Terms of Use
+    url: https://www.microsoft.com/en-us/legal/terms-of-use
+servers:
+- url: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+  description: Business Central production environment
+  variables:
+    environment:
+      default: production
+      description: Business Central environment name
+security:
+- oauth2: []
+tags:
+- name: SalesInvoices
+  description: Sales invoice documents
+paths:
+  /companies({companyId})/salesInvoices:
+    get:
+      tags:
+      - SalesInvoices
+      summary: List sales invoices
+      operationId: salesInvoices_list
+      parameters:
+      - $ref: '#/components/parameters/companyId'
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+      - SalesInvoices
+      summary: Create a sales invoice
+      operationId: salesInvoices_create
+      parameters:
+      - $ref: '#/components/parameters/companyId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+components:
+  parameters:
+    companyId:
+      name: companyId
+      in: path
+      required: true
+      description: Company GUID
+      schema:
+        type: string
+        format: uuid
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: Microsoft Entra ID OAuth 2.0
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            https://api.businesscentral.dynamics.com/.default: Business Central API access

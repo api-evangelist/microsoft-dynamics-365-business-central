@@ -1,0 +1,238 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Dynamics 365 Business Central API v2.0 Companies Customers API
+  description: 'Standard REST API (v2.0) for Microsoft Dynamics 365 Business Central.
+
+    Exposes Business Central entities such as companies, customers, vendors,
+
+    items, sales documents, purchase documents, and journals via an OData v4
+
+    interface. Authentication uses OAuth 2.0 (Microsoft Entra ID) bearer
+
+    tokens supporting both delegated user and service-to-service flows.
+
+
+    URLs follow the pattern:
+
+    https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+
+    '
+  version: v2.0
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+  license:
+    name: Microsoft Terms of Use
+    url: https://www.microsoft.com/en-us/legal/terms-of-use
+servers:
+- url: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+  description: Business Central production environment
+  variables:
+    environment:
+      default: production
+      description: Business Central environment name
+security:
+- oauth2: []
+tags:
+- name: Customers
+  description: Customer master data
+paths:
+  /companies({companyId})/customers:
+    get:
+      tags:
+      - Customers
+      summary: List customers in a company
+      operationId: customers_list
+      parameters:
+      - $ref: '#/components/parameters/companyId'
+      - $ref: '#/components/parameters/expand'
+      - $ref: '#/components/parameters/filter'
+      - $ref: '#/components/parameters/top'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerCollection'
+    post:
+      tags:
+      - Customers
+      summary: Create a customer
+      operationId: customers_create
+      parameters:
+      - $ref: '#/components/parameters/companyId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+  /companies({companyId})/customers({id}):
+    get:
+      tags:
+      - Customers
+      summary: Get a customer
+      operationId: customers_get
+      parameters:
+      - $ref: '#/components/parameters/companyId'
+      - $ref: '#/components/parameters/id'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+    patch:
+      tags:
+      - Customers
+      summary: Update a customer
+      operationId: customers_update
+      parameters:
+      - $ref: '#/components/parameters/companyId'
+      - $ref: '#/components/parameters/id'
+      - $ref: '#/components/parameters/ifMatch'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Customers
+      summary: Delete a customer
+      operationId: customers_delete
+      parameters:
+      - $ref: '#/components/parameters/companyId'
+      - $ref: '#/components/parameters/id'
+      - $ref: '#/components/parameters/ifMatch'
+      responses:
+        '204':
+          description: No Content
+components:
+  parameters:
+    ifMatch:
+      name: If-Match
+      in: header
+      description: ETag for optimistic concurrency
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      schema:
+        type: string
+    companyId:
+      name: companyId
+      in: path
+      required: true
+      description: Company GUID
+      schema:
+        type: string
+        format: uuid
+    expand:
+      name: $expand
+      in: query
+      schema:
+        type: string
+    top:
+      name: $top
+      in: query
+      schema:
+        type: integer
+    id:
+      name: id
+      in: path
+      required: true
+      description: GUID identifier
+      schema:
+        type: string
+        format: uuid
+  schemas:
+    CustomerCollection:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Customer'
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        number:
+          type: string
+        displayName:
+          type: string
+        type:
+          type: string
+          enum:
+          - Company
+          - Person
+        addressLine1:
+          type: string
+        addressLine2:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        country:
+          type: string
+        postalCode:
+          type: string
+        phoneNumber:
+          type: string
+        email:
+          type: string
+        website:
+          type: string
+        taxLiable:
+          type: boolean
+        taxAreaId:
+          type: string
+          format: uuid
+        currencyId:
+          type: string
+          format: uuid
+        currencyCode:
+          type: string
+        paymentTermsId:
+          type: string
+          format: uuid
+        shipmentMethodId:
+          type: string
+          format: uuid
+        paymentMethodId:
+          type: string
+          format: uuid
+        blocked:
+          type: string
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: Microsoft Entra ID OAuth 2.0
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            https://api.businesscentral.dynamics.com/.default: Business Central API access
