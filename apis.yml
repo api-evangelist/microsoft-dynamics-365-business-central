@@ -9,7 +9,19 @@ description: >-
   automate processes, and integrate Business Central with Power Platform and
   third-party systems using OAuth 2.0 authentication via Microsoft Entra ID.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-dynamics-365-business-central.png
 tags:
   - ERP
   - Cloud ERP
@@ -25,59 +37,165 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: microsoft-dynamics-365-business-central:api-v2
-    name: Business Central API (v2.0)
-    description: >-
-      Standard REST API (v2.0) for Dynamics 365 Business Central exposing
-      entities such as customers, vendors, items, sales and purchase documents,
-      and journals. Authenticates with OAuth 2.0 via Microsoft Entra ID and
-      supports both delegated user and service-to-service flows.
-    humanURL: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
-    baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
-    tags:
-      - REST
-      - OAuth 2.0
-      - Entra ID
-      - Connect Apps
-      - Standard Entities
-    properties:
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
-      - type: OpenAPI
-        url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/dynamics-open-api
-      - type: Authentication
-        url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
-  - aid: microsoft-dynamics-365-business-central:odata-web-services
-    name: Business Central OData Web Services
-    description: >-
-      OData v4 endpoints exposing published Business Central pages and queries
-      as web services for custom integrations, reporting, and Power Platform
-      connectors when standard API v2.0 entities are insufficient.
-    humanURL: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services
-    baseURL: https://api.businesscentral.dynamics.com/v2.0/{tenant}/{environment}/ODataV4
-    tags:
-      - OData
-      - Web Services
-      - Pages
-      - Queries
-    properties:
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services
-  - aid: microsoft-dynamics-365-business-central:admin-center-api
-    name: Business Central Administration Center API
-    description: >-
-      Administration Center REST API for managing Business Central environments,
-      tenants, telemetry, update settings, and notifications programmatically
-      for ISVs and delegated administrators.
-    humanURL: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-center-api
-    baseURL: https://api.businesscentral.dynamics.com/admin/v2.x
-    tags:
-      - Administration
-      - Tenant Management
-      - Environments
-    properties:
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-center-api
+- aid: microsoft-dynamics-365-business-central:odata-web-services
+  name: Business Central OData Web Services
+  description: >-
+    OData v4 endpoints exposing published Business Central pages and queries as web services for custom
+    integrations, reporting, and Power Platform connectors when standard API v2.0 entities are insufficient.
+  humanURL: >-
+    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services
+  baseURL: https://api.businesscentral.dynamics.com/v2.0/{tenant}/{environment}/ODataV4
+  tags:
+  - OData
+  - Web Services
+  - Pages
+  - Queries
+  properties:
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services
+- aid: microsoft-dynamics-365-business-central:admin-center-api
+  name: Business Central Administration Center API
+  description: >-
+    Administration Center REST API for managing Business Central environments, tenants, telemetry, update
+    settings, and notifications programmatically for ISVs and delegated administrators.
+  humanURL: >-
+    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-center-api
+  baseURL: https://api.businesscentral.dynamics.com/admin/v2.x
+  tags:
+  - Administration
+  - Tenant Management
+  - Environments
+  properties:
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-center-api
+- aid: >-
+    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-companies-api
+  name: Microsoft Dynamics 365 Business Central Companies API
+  description: Business Central company entities
+  humanURL: >-
+    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+  tags:
+  - Companies
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-business-central-companies-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
+- aid: >-
+    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-customers-api
+  name: Microsoft Dynamics 365 Business Central Customers API
+  description: Customer master data
+  humanURL: >-
+    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+  tags:
+  - Customers
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-business-central-customers-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
+- aid: >-
+    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-items-api
+  name: Microsoft Dynamics 365 Business Central Items API
+  description: Item master data
+  humanURL: >-
+    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+  tags:
+  - Items
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-business-central-items-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
+- aid: >-
+    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-purchaseorders-api
+  name: Microsoft Dynamics 365 Business Central PurchaseOrders API
+  description: Purchase order documents
+  humanURL: >-
+    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+  tags:
+  - PurchaseOrders
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-business-central-purchaseorders-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
+- aid: >-
+    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-salesinvoices-api
+  name: Microsoft Dynamics 365 Business Central SalesInvoices API
+  description: Sales invoice documents
+  humanURL: >-
+    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+  tags:
+  - SalesInvoices
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-business-central-salesinvoices-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
+- aid: >-
+    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-salesorders-api
+  name: Microsoft Dynamics 365 Business Central SalesOrders API
+  description: Sales order documents
+  humanURL: >-
+    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+  tags:
+  - SalesOrders
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-business-central-salesorders-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
+- aid: >-
+    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-vendors-api
+  name: Microsoft Dynamics 365 Business Central Vendors API
+  description: Vendor master data
+  humanURL: >-
+    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+  tags:
+  - Vendors
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-business-central-vendors-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
 common:
   - type: AgenticAccess
     url: agentic-access/microsoft-dynamics-365-business-central-agentic-access.yml
