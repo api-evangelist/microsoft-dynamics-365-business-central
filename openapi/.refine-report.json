@@ -1,0 +1,26 @@
+{
+  "provider": "microsoft-dynamics-365-business-central",
+  "sources": [
+    "microsoft-dynamics-365-business-central-companies-api-openapi.yml",
+    "microsoft-dynamics-365-business-central-customers-api-openapi.yml",
+    "microsoft-dynamics-365-business-central-items-api-openapi.yml",
+    "microsoft-dynamics-365-business-central-purchaseorders-api-openapi.yml",
+    "microsoft-dynamics-365-business-central-salesinvoices-api-openapi.yml",
+    "microsoft-dynamics-365-business-central-salesorders-api-openapi.yml",
+    "microsoft-dynamics-365-business-central-vendors-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-dynamics-365-business-central-companies-api-openapi.yml",
+    "microsoft-dynamics-365-business-central-customers-api-openapi.yml",
+    "microsoft-dynamics-365-business-central-items-api-openapi.yml",
+    "microsoft-dynamics-365-business-central-purchaseorders-api-openapi.yml",
+    "microsoft-dynamics-365-business-central-salesinvoices-api-openapi.yml",
+    "microsoft-dynamics-365-business-central-salesorders-api-openapi.yml",
+    "microsoft-dynamics-365-business-central-vendors-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

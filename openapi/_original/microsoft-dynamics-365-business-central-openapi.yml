@@ -1,0 +1,531 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Dynamics 365 Business Central API v2.0
+  description: |
+    Standard REST API (v2.0) for Microsoft Dynamics 365 Business Central.
+    Exposes Business Central entities such as companies, customers, vendors,
+    items, sales documents, purchase documents, and journals via an OData v4
+    interface. Authentication uses OAuth 2.0 (Microsoft Entra ID) bearer
+    tokens supporting both delegated user and service-to-service flows.
+
+    URLs follow the pattern:
+    https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+  version: "v2.0"
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+  license:
+    name: Microsoft Terms of Use
+    url: https://www.microsoft.com/en-us/legal/terms-of-use
+servers:
+  - url: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
+    description: Business Central production environment
+    variables:
+      environment:
+        default: production
+        description: Business Central environment name
+security:
+  - oauth2: []
+tags:
+  - name: Companies
+    description: Business Central company entities
+  - name: Customers
+    description: Customer master data
+  - name: Vendors
+    description: Vendor master data
+  - name: Items
+    description: Item master data
+  - name: SalesOrders
+    description: Sales order documents
+  - name: SalesInvoices
+    description: Sales invoice documents
+  - name: PurchaseOrders
+    description: Purchase order documents
+paths:
+  /companies:
+    get:
+      tags: [Companies]
+      summary: List companies
+      operationId: companies_list
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyCollection'
+  /companies({id}):
+    get:
+      tags: [Companies]
+      summary: Get a company
+      operationId: companies_get
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company'
+  /companies({companyId})/customers:
+    get:
+      tags: [Customers]
+      summary: List customers in a company
+      operationId: customers_list
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/expand'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/top'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerCollection'
+    post:
+      tags: [Customers]
+      summary: Create a customer
+      operationId: customers_create
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+  /companies({companyId})/customers({id}):
+    get:
+      tags: [Customers]
+      summary: Get a customer
+      operationId: customers_get
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+    patch:
+      tags: [Customers]
+      summary: Update a customer
+      operationId: customers_update
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/ifMatch'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [Customers]
+      summary: Delete a customer
+      operationId: customers_delete
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/ifMatch'
+      responses:
+        '204':
+          description: No Content
+  /companies({companyId})/vendors:
+    get:
+      tags: [Vendors]
+      summary: List vendors
+      operationId: vendors_list
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+      responses:
+        '200':
+          description: OK
+    post:
+      tags: [Vendors]
+      summary: Create a vendor
+      operationId: vendors_create
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /companies({companyId})/vendors({id}):
+    get:
+      tags: [Vendors]
+      summary: Get a vendor
+      operationId: vendors_get
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags: [Vendors]
+      summary: Update a vendor
+      operationId: vendors_update
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/ifMatch'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [Vendors]
+      summary: Delete a vendor
+      operationId: vendors_delete
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/ifMatch'
+      responses:
+        '204':
+          description: No Content
+  /companies({companyId})/items:
+    get:
+      tags: [Items]
+      summary: List items
+      operationId: items_list
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+      responses:
+        '200':
+          description: OK
+    post:
+      tags: [Items]
+      summary: Create an item
+      operationId: items_create
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /companies({companyId})/items({id}):
+    get:
+      tags: [Items]
+      summary: Get an item
+      operationId: items_get
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags: [Items]
+      summary: Update an item
+      operationId: items_update
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/ifMatch'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [Items]
+      summary: Delete an item
+      operationId: items_delete
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/ifMatch'
+      responses:
+        '204':
+          description: No Content
+  /companies({companyId})/salesOrders:
+    get:
+      tags: [SalesOrders]
+      summary: List sales orders
+      operationId: salesOrders_list
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+      responses:
+        '200':
+          description: OK
+    post:
+      tags: [SalesOrders]
+      summary: Create a sales order
+      operationId: salesOrders_create
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /companies({companyId})/salesOrders({id}):
+    get:
+      tags: [SalesOrders]
+      summary: Get a sales order
+      operationId: salesOrders_get
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags: [SalesOrders]
+      summary: Update a sales order
+      operationId: salesOrders_update
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/ifMatch'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [SalesOrders]
+      summary: Delete a sales order
+      operationId: salesOrders_delete
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/ifMatch'
+      responses:
+        '204':
+          description: No Content
+  /companies({companyId})/salesInvoices:
+    get:
+      tags: [SalesInvoices]
+      summary: List sales invoices
+      operationId: salesInvoices_list
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+      responses:
+        '200':
+          description: OK
+    post:
+      tags: [SalesInvoices]
+      summary: Create a sales invoice
+      operationId: salesInvoices_create
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /companies({companyId})/purchaseOrders:
+    get:
+      tags: [PurchaseOrders]
+      summary: List purchase orders
+      operationId: purchaseOrders_list
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+      responses:
+        '200':
+          description: OK
+    post:
+      tags: [PurchaseOrders]
+      summary: Create a purchase order
+      operationId: purchaseOrders_create
+      parameters:
+        - $ref: '#/components/parameters/companyId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: Microsoft Entra ID OAuth 2.0
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            https://api.businesscentral.dynamics.com/.default: Business Central API access
+  parameters:
+    id:
+      name: id
+      in: path
+      required: true
+      description: GUID identifier
+      schema:
+        type: string
+        format: uuid
+    companyId:
+      name: companyId
+      in: path
+      required: true
+      description: Company GUID
+      schema:
+        type: string
+        format: uuid
+    expand:
+      name: $expand
+      in: query
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      schema:
+        type: string
+    top:
+      name: $top
+      in: query
+      schema:
+        type: integer
+    ifMatch:
+      name: If-Match
+      in: header
+      description: ETag for optimistic concurrency
+      schema:
+        type: string
+  schemas:
+    Company:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        systemVersion:
+          type: string
+        name:
+          type: string
+        displayName:
+          type: string
+        businessProfileId:
+          type: string
+        systemCreatedAt:
+          type: string
+          format: date-time
+        systemModifiedAt:
+          type: string
+          format: date-time
+    CompanyCollection:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Company'
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        number:
+          type: string
+        displayName:
+          type: string
+        type:
+          type: string
+          enum: [Company, Person]
+        addressLine1:
+          type: string
+        addressLine2:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        country:
+          type: string
+        postalCode:
+          type: string
+        phoneNumber:
+          type: string
+        email:
+          type: string
+        website:
+          type: string
+        taxLiable:
+          type: boolean
+        taxAreaId:
+          type: string
+          format: uuid
+        currencyId:
+          type: string
+          format: uuid
+        currencyCode:
+          type: string
+        paymentTermsId:
+          type: string
+          format: uuid
+        shipmentMethodId:
+          type: string
+          format: uuid
+        paymentMethodId:
+          type: string
+          format: uuid
+        blocked:
+          type: string
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+    CustomerCollection:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Customer'
