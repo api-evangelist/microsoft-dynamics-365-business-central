@@ -1,0 +1,250 @@
+{
+  "item": [
+    {
+      "id": "cfc94146-b9ae-4c43-b3ff-466416d325dd",
+      "name": "Companies",
+      "description": {
+        "content": "Business Central company entities",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6f358c70-d3f4-47a5-aaf5-e770b1c6453d",
+          "name": "List companies",
+          "request": {
+            "name": "List companies",
+            "description": {},
+            "url": {
+              "path": [
+                "companies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Business Central environment name",
+                  "type": "any",
+                  "value": "{{environment}}",
+                  "key": "environment"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c66996f9-03a9-4fc4-9b33-c1ee61bae973",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Business Central environment name",
+                      "type": "any",
+                      "value": "{{environment}}",
+                      "key": "environment"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"c9abe4f0-2433-3883-66ba-abeaf53ba4e6\",\n      \"systemVersion\": \"string\",\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"businessProfileId\": \"string\",\n      \"systemCreatedAt\": \"1973-01-17T13:02:01.756Z\",\n      \"systemModifiedAt\": \"1983-11-17T15:52:10.482Z\"\n    },\n    {\n      \"id\": \"39651dea-0edc-6a3d-7ce4-aea5d8ac48f2\",\n      \"systemVersion\": \"string\",\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"businessProfileId\": \"string\",\n      \"systemCreatedAt\": \"1955-08-10T14:01:14.187Z\",\n      \"systemModifiedAt\": \"1987-08-05T15:09:05.753Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "279232e3-dd3d-4675-953f-634ead5b93ca",
+          "name": "Get a company",
+          "request": {
+            "name": "Get a company",
+            "description": {},
+            "url": {
+              "path": [
+                "companies({{id}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Business Central environment name",
+                  "type": "any",
+                  "value": "{{environment}}",
+                  "key": "environment"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "016c7a53-929d-4615-bef6-52454289003c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies({{id}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Business Central environment name",
+                      "type": "any",
+                      "value": "{{environment}}",
+                      "key": "environment"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"6854e45c-29fc-f635-6bd4-3b58356899de\",\n  \"systemVersion\": \"string\",\n  \"name\": \"string\",\n  \"displayName\": \"string\",\n  \"businessProfileId\": \"string\",\n  \"systemCreatedAt\": \"2020-04-14T03:26:49.433Z\",\n  \"systemModifiedAt\": \"1990-03-31T22:31:02.334Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Business Central environment name",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "production",
+      "key": "environment"
+    },
+    {
+      "type": "string",
+      "value": "https://api.businesscentral.dynamics.com/v2.0/{{environment}}/api/v2.0",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) GUID identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<uuid>",
+      "key": "id"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://api.businesscentral.dynamics.com/.default"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/v2.0/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3b07261f-02ee-42be-8328-27f72e9ba3fb",
+    "name": "Microsoft Dynamics 365 Business Central API v2.0 Companies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Standard REST API (v2.0) for Microsoft Dynamics 365 Business Central.\nExposes Business Central entities such as companies, customers, vendors,\nitems, sales documents, purchase documents, and journals via an OData v4\ninterface. Authentication uses OAuth 2.0 (Microsoft Entra ID) bearer\ntokens supporting both delegated user and service-to-service flows.\n\nURLs follow the pattern:\nhttps://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0\n\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

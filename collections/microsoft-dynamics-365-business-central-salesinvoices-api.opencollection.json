@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Dynamics 365 Business Central API v2.0 Companies SalesInvoices API",
+    "version": "v2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+      "accessTokenUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SalesInvoices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List sales invoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/salesInvoices",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              }
+            ]
+          },
+          "docs": "List sales invoices"
+        },
+        {
+          "info": {
+            "name": "Create a sales invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/salesInvoices",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a sales invoice"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,627 @@
+{
+  "item": [
+    {
+      "id": "c51d5841-0cd2-46da-8e8a-abeaea094580",
+      "name": "Customers",
+      "description": {
+        "content": "Customer master data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e006db0d-62c7-4b11-baee-c9262362f569",
+          "name": "List customers in a company",
+          "request": {
+            "name": "List customers in a company",
+            "description": {},
+            "url": {
+              "path": [
+                "companies({{companyId}})",
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$expand",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "$filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "$top",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Business Central environment name",
+                  "type": "any",
+                  "value": "{{environment}}",
+                  "key": "environment"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2f57c98b-5c4e-4cf6-9c47-0595050b3dcd",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Business Central environment name",
+                      "type": "any",
+                      "value": "{{environment}}",
+                      "key": "environment"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"8a66f729-3a3c-c9c8-1a44-76abed70da8b\",\n      \"number\": \"string\",\n      \"displayName\": \"string\",\n      \"type\": \"Person\",\n      \"addressLine1\": \"string\",\n      \"addressLine2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"country\": \"string\",\n      \"postalCode\": \"string\",\n      \"phoneNumber\": \"string\",\n      \"email\": \"string\",\n      \"website\": \"string\",\n      \"taxLiable\": false,\n      \"taxAreaId\": \"cf45b629-0524-34fe-6a21-2c2d8137a6a5\",\n      \"currencyId\": \"4aff588c-f1a2-5598-0ed1-42427d546d5e\",\n      \"currencyCode\": \"string\",\n      \"paymentTermsId\": \"2fce1e36-110a-06bd-1cb0-694af79530e5\",\n      \"shipmentMethodId\": \"a6f32861-8a47-84bf-94d5-37db37c300a6\",\n      \"paymentMethodId\": \"1a48c2f0-e5d7-c1ef-b5a0-8db5338041c4\",\n      \"blocked\": \"string\",\n      \"lastModifiedDateTime\": \"1993-02-20T06:25:39.690Z\"\n    },\n    {\n      \"id\": \"82c329bb-7dad-873f-1df0-5721ce2597bd\",\n      \"number\": \"string\",\n      \"displayName\": \"string\",\n      \"type\": \"Person\",\n      \"addressLine1\": \"string\",\n      \"addressLine2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"country\": \"string\",\n      \"postalCode\": \"string\",\n      \"phoneNumber\": \"string\",\n      \"email\": \"string\",\n      \"website\": \"string\",\n      \"taxLiable\": true,\n      \"taxAreaId\": \"b41f8cb8-8341-3264-b4e7-5c0ff56c9836\",\n      \"currencyId\": \"87fa0764-d7d8-fba5-4ab9-c98fcd976109\",\n      \"currencyCode\": \"string\",\n      \"paymentTermsId\": \"4ba486e6-c299-0e7d-3142-c3c6c723d593\",\n      \"shipmentMethodId\": \"0964d850-7306-91d1-bc6a-9bb976fe292f\",\n      \"paymentMethodId\": \"79bc803d-de3e-3a1f-2395-1759d71f3e27\",\n      \"blocked\": \"string\",\n      \"lastModifiedDateTime\": \"1972-10-21T18:15:58.330Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5a393e27-04b6-4b07-bf26-53b464ca9bc9",
+          "name": "Create a customer",
+          "request": {
+            "name": "Create a customer",
+            "description": {},
+            "url": {
+              "path": [
+                "companies({{companyId}})",
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Business Central environment name",
+                  "type": "any",
+                  "value": "{{environment}}",
+                  "key": "environment"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<uuid>\",\n  \"number\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"type\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"postalCode\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"website\": \"<string>\",\n  \"taxLiable\": \"<boolean>\",\n  \"taxAreaId\": \"<uuid>\",\n  \"currencyId\": \"<uuid>\",\n  \"currencyCode\": \"<string>\",\n  \"paymentTermsId\": \"<uuid>\",\n  \"shipmentMethodId\": \"<uuid>\",\n  \"paymentMethodId\": \"<uuid>\",\n  \"blocked\": \"<string>\",\n  \"lastModifiedDateTime\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ef53f9e4-a326-478b-8b3d-af6893532e85",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Business Central environment name",
+                      "type": "any",
+                      "value": "{{environment}}",
+                      "key": "environment"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<uuid>\",\n  \"number\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"type\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"postalCode\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"website\": \"<string>\",\n  \"taxLiable\": \"<boolean>\",\n  \"taxAreaId\": \"<uuid>\",\n  \"currencyId\": \"<uuid>\",\n  \"currencyCode\": \"<string>\",\n  \"paymentTermsId\": \"<uuid>\",\n  \"shipmentMethodId\": \"<uuid>\",\n  \"paymentMethodId\": \"<uuid>\",\n  \"blocked\": \"<string>\",\n  \"lastModifiedDateTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"87bca9ca-d85b-5504-bc08-93995363c6d8\",\n  \"number\": \"string\",\n  \"displayName\": \"string\",\n  \"type\": \"Company\",\n  \"addressLine1\": \"string\",\n  \"addressLine2\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"country\": \"string\",\n  \"postalCode\": \"string\",\n  \"phoneNumber\": \"string\",\n  \"email\": \"string\",\n  \"website\": \"string\",\n  \"taxLiable\": true,\n  \"taxAreaId\": \"e425f60a-f501-05fb-73b5-78ffcb61f069\",\n  \"currencyId\": \"b19779c3-c5ae-6f9a-0aa4-f9e2d31688de\",\n  \"currencyCode\": \"string\",\n  \"paymentTermsId\": \"47744f91-ecaa-3fb2-d020-2bf3896b89d0\",\n  \"shipmentMethodId\": \"6ee01e5b-d754-b520-80e4-93871154fc97\",\n  \"paymentMethodId\": \"d1b4e11e-d681-525f-6850-fc7f9ec4865c\",\n  \"blocked\": \"string\",\n  \"lastModifiedDateTime\": \"1955-02-10T16:19:38.830Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ae89633-95db-465a-8df8-1aef1a43da32",
+          "name": "Get a customer",
+          "request": {
+            "name": "Get a customer",
+            "description": {},
+            "url": {
+              "path": [
+                "companies({{companyId}})",
+                "customers({{id}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$expand",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Business Central environment name",
+                  "type": "any",
+                  "value": "{{environment}}",
+                  "key": "environment"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3589ea04-250d-4776-89aa-c4dccb9bf71d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers({{id}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Business Central environment name",
+                      "type": "any",
+                      "value": "{{environment}}",
+                      "key": "environment"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"87bca9ca-d85b-5504-bc08-93995363c6d8\",\n  \"number\": \"string\",\n  \"displayName\": \"string\",\n  \"type\": \"Company\",\n  \"addressLine1\": \"string\",\n  \"addressLine2\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"country\": \"string\",\n  \"postalCode\": \"string\",\n  \"phoneNumber\": \"string\",\n  \"email\": \"string\",\n  \"website\": \"string\",\n  \"taxLiable\": true,\n  \"taxAreaId\": \"e425f60a-f501-05fb-73b5-78ffcb61f069\",\n  \"currencyId\": \"b19779c3-c5ae-6f9a-0aa4-f9e2d31688de\",\n  \"currencyCode\": \"string\",\n  \"paymentTermsId\": \"47744f91-ecaa-3fb2-d020-2bf3896b89d0\",\n  \"shipmentMethodId\": \"6ee01e5b-d754-b520-80e4-93871154fc97\",\n  \"paymentMethodId\": \"d1b4e11e-d681-525f-6850-fc7f9ec4865c\",\n  \"blocked\": \"string\",\n  \"lastModifiedDateTime\": \"1955-02-10T16:19:38.830Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "489f4f80-f004-4700-bc24-071005c3cda1",
+          "name": "Update a customer",
+          "request": {
+            "name": "Update a customer",
+            "description": {},
+            "url": {
+              "path": [
+                "companies({{companyId}})",
+                "customers({{id}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Business Central environment name",
+                  "type": "any",
+                  "value": "{{environment}}",
+                  "key": "environment"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "ETag for optimistic concurrency",
+                "key": "If-Match",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<uuid>\",\n  \"number\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"type\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"postalCode\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"website\": \"<string>\",\n  \"taxLiable\": \"<boolean>\",\n  \"taxAreaId\": \"<uuid>\",\n  \"currencyId\": \"<uuid>\",\n  \"currencyCode\": \"<string>\",\n  \"paymentTermsId\": \"<uuid>\",\n  \"shipmentMethodId\": \"<uuid>\",\n  \"paymentMethodId\": \"<uuid>\",\n  \"blocked\": \"<string>\",\n  \"lastModifiedDateTime\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ed613c0a-cd9c-4e84-96e7-954afa086213",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers({{id}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Business Central environment name",
+                      "type": "any",
+                      "value": "{{environment}}",
+                      "key": "environment"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag for optimistic concurrency",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<uuid>\",\n  \"number\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"type\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"postalCode\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"website\": \"<string>\",\n  \"taxLiable\": \"<boolean>\",\n  \"taxAreaId\": \"<uuid>\",\n  \"currencyId\": \"<uuid>\",\n  \"currencyCode\": \"<string>\",\n  \"paymentTermsId\": \"<uuid>\",\n  \"shipmentMethodId\": \"<uuid>\",\n  \"paymentMethodId\": \"<uuid>\",\n  \"blocked\": \"<string>\",\n  \"lastModifiedDateTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ab52d209-8223-4766-bf44-4bd188a7bc3f",
+          "name": "Delete a customer",
+          "request": {
+            "name": "Delete a customer",
+            "description": {},
+            "url": {
+              "path": [
+                "companies({{companyId}})",
+                "customers({{id}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Business Central environment name",
+                  "type": "any",
+                  "value": "{{environment}}",
+                  "key": "environment"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "ETag for optimistic concurrency",
+                "key": "If-Match",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "23c93cca-3427-410b-80fb-f736b86618c9",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers({{id}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Business Central environment name",
+                      "type": "any",
+                      "value": "{{environment}}",
+                      "key": "environment"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag for optimistic concurrency",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Business Central environment name",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "production",
+      "key": "environment"
+    },
+    {
+      "type": "string",
+      "value": "https://api.businesscentral.dynamics.com/v2.0/{{environment}}/api/v2.0",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Company GUID",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<uuid>",
+      "key": "companyId"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) GUID identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<uuid>",
+      "key": "id"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://api.businesscentral.dynamics.com/.default"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/v2.0/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "aa08695b-49cd-4ff1-884b-9feeeb798bda",
+    "name": "Microsoft Dynamics 365 Business Central API v2.0 Companies Customers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Standard REST API (v2.0) for Microsoft Dynamics 365 Business Central.\nExposes Business Central entities such as companies, customers, vendors,\nitems, sales documents, purchase documents, and journals via an OData v4\ninterface. Authentication uses OAuth 2.0 (Microsoft Entra ID) bearer\ntokens supporting both delegated user and service-to-service flows.\n\nURLs follow the pattern:\nhttps://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0\n\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

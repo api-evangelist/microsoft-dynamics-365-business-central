@@ -1,0 +1,183 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Dynamics 365 Business Central API v2.0 Companies Customers API",
+    "version": "v2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+      "accessTokenUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Customers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List customers in a company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/customers",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              },
+              {
+                "name": "$expand",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "$filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "$top",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List customers in a company"
+        },
+        {
+          "info": {
+            "name": "Create a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/customers",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a customer"
+        },
+        {
+          "info": {
+            "name": "Get a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/customers(:id)",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "GUID identifier"
+              },
+              {
+                "name": "$expand",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a customer"
+        },
+        {
+          "info": {
+            "name": "Update a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/customers(:id)",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "GUID identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a customer"
+        },
+        {
+          "info": {
+            "name": "Delete a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/customers(:id)",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "GUID identifier"
+              }
+            ]
+          },
+          "docs": "Delete a customer"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,163 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Dynamics 365 Business Central API v2.0 Companies Items API",
+    "version": "v2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+      "accessTokenUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Items",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/items",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              }
+            ]
+          },
+          "docs": "List items"
+        },
+        {
+          "info": {
+            "name": "Create an item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/items",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an item"
+        },
+        {
+          "info": {
+            "name": "Get an item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/items(:id)",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "GUID identifier"
+              }
+            ]
+          },
+          "docs": "Get an item"
+        },
+        {
+          "info": {
+            "name": "Update an item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/items(:id)",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "GUID identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an item"
+        },
+        {
+          "info": {
+            "name": "Delete an item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/items(:id)",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "GUID identifier"
+              }
+            ]
+          },
+          "docs": "Delete an item"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

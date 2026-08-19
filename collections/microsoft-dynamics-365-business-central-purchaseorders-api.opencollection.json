@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Dynamics 365 Business Central API v2.0 Companies PurchaseOrders API",
+    "version": "v2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+      "accessTokenUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PurchaseOrders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List purchase orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/purchaseOrders",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              }
+            ]
+          },
+          "docs": "List purchase orders"
+        },
+        {
+          "info": {
+            "name": "Create a purchase order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/purchaseOrders",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a purchase order"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

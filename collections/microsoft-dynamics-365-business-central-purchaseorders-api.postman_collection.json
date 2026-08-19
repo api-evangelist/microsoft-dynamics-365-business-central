@@ -1,0 +1,257 @@
+{
+  "item": [
+    {
+      "id": "96897e9e-3c6c-4175-9fe2-3b090473bcd6",
+      "name": "PurchaseOrders",
+      "description": {
+        "content": "Purchase order documents",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "90783668-d39f-4055-9307-113de9637523",
+          "name": "List purchase orders",
+          "request": {
+            "name": "List purchase orders",
+            "description": {},
+            "url": {
+              "path": [
+                "companies({{companyId}})",
+                "purchaseOrders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Business Central environment name",
+                  "type": "any",
+                  "value": "{{environment}}",
+                  "key": "environment"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "741559b6-46b0-48bf-a8fb-fd75fa98db75",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies({{companyId}})",
+                    "purchaseOrders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Business Central environment name",
+                      "type": "any",
+                      "value": "{{environment}}",
+                      "key": "environment"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ba68b7ee-25c5-4945-b67b-05f34dcb1a9e",
+          "name": "Create a purchase order",
+          "request": {
+            "name": "Create a purchase order",
+            "description": {},
+            "url": {
+              "path": [
+                "companies({{companyId}})",
+                "purchaseOrders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Business Central environment name",
+                  "type": "any",
+                  "value": "{{environment}}",
+                  "key": "environment"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2ac2b528-3704-4f0a-8b5f-58ead547aa97",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies({{companyId}})",
+                    "purchaseOrders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Business Central environment name",
+                      "type": "any",
+                      "value": "{{environment}}",
+                      "key": "environment"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Business Central environment name",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "production",
+      "key": "environment"
+    },
+    {
+      "type": "string",
+      "value": "https://api.businesscentral.dynamics.com/v2.0/{{environment}}/api/v2.0",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Company GUID",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<uuid>",
+      "key": "companyId"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://api.businesscentral.dynamics.com/.default"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/v2.0/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e411f106-fcf6-439d-b2fe-be7d720135f8",
+    "name": "Microsoft Dynamics 365 Business Central API v2.0 Companies PurchaseOrders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Standard REST API (v2.0) for Microsoft Dynamics 365 Business Central.\nExposes Business Central entities such as companies, customers, vendors,\nitems, sales documents, purchase documents, and journals via an OData v4\ninterface. Authentication uses OAuth 2.0 (Microsoft Entra ID) bearer\ntokens supporting both delegated user and service-to-service flows.\n\nURLs follow the pattern:\nhttps://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0\n\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

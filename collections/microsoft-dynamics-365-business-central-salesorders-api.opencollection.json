@@ -1,0 +1,163 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Dynamics 365 Business Central API v2.0 Companies SalesOrders API",
+    "version": "v2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+      "accessTokenUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SalesOrders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List sales orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/salesOrders",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              }
+            ]
+          },
+          "docs": "List sales orders"
+        },
+        {
+          "info": {
+            "name": "Create a sales order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/salesOrders",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a sales order"
+        },
+        {
+          "info": {
+            "name": "Get a sales order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/salesOrders(:id)",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "GUID identifier"
+              }
+            ]
+          },
+          "docs": "Get a sales order"
+        },
+        {
+          "info": {
+            "name": "Update a sales order",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/salesOrders(:id)",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "GUID identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a sales order"
+        },
+        {
+          "info": {
+            "name": "Delete a sales order",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0/companies(:companyId)/salesOrders(:id)",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path",
+                "description": "Company GUID"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "GUID identifier"
+              }
+            ]
+          },
+          "docs": "Delete a sales order"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
