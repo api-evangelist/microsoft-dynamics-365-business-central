@@ -28,6 +28,15 @@ tags:
   - Finance
   - Accounting
   - Supply Chain
+  - Small Business
+  - Mid-Market
+  - Microsoft Dynamics 365
+tags_raw:
+  - ERP
+  - Cloud ERP
+  - Finance
+  - Accounting
+  - Supply Chain
   - Operations
   - Small Business
   - Mid-Market
@@ -46,6 +55,11 @@ apis:
     https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services
   baseURL: https://api.businesscentral.dynamics.com/v2.0/{tenant}/{environment}/ODataV4
   tags:
+  - OData
+  - Web Services
+  - Pages
+  - Query
+  tags_raw:
   - OData
   - Web Services
   - Pages
@@ -114,6 +128,8 @@ apis:
     https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
   baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
   tags:
+  - Item
+  tags_raw:
   - Items
   properties:
   - type: OpenAPI
@@ -132,6 +148,8 @@ apis:
     https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
   baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
   tags:
+  - Purchase Orders
+  tags_raw:
   - PurchaseOrders
   properties:
   - type: OpenAPI
@@ -150,6 +168,8 @@ apis:
     https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
   baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
   tags:
+  - Sales Invoices
+  tags_raw:
   - SalesInvoices
   properties:
   - type: OpenAPI
@@ -168,6 +188,8 @@ apis:
     https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
   baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
   tags:
+  - Sales Orders
+  tags_raw:
   - SalesOrders
   properties:
   - type: OpenAPI
