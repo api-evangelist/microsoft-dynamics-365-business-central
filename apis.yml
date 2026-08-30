@@ -180,7 +180,7 @@ apis:
     https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
   baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
   tags:
-  - Sales Invoices
+  - SalesInvoices
   tags_raw:
   - SalesInvoices
   properties:
