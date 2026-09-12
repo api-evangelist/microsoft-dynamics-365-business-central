@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Microsoft Dynamics 365 Business Central API v2.0 Companies Customers API
   description: 'Standard REST API (v2.0) for Microsoft Dynamics 365 Business Central.
@@ -123,44 +123,6 @@ paths:
         '204':
           description: No Content
 components:
-  parameters:
-    ifMatch:
-      name: If-Match
-      in: header
-      description: ETag for optimistic concurrency
-      schema:
-        type: string
-    filter:
-      name: $filter
-      in: query
-      schema:
-        type: string
-    companyId:
-      name: companyId
-      in: path
-      required: true
-      description: Company GUID
-      schema:
-        type: string
-        format: uuid
-    expand:
-      name: $expand
-      in: query
-      schema:
-        type: string
-    top:
-      name: $top
-      in: query
-      schema:
-        type: integer
-    id:
-      name: id
-      in: path
-      required: true
-      description: GUID identifier
-      schema:
-        type: string
-        format: uuid
   schemas:
     CustomerCollection:
       type: object
@@ -226,6 +188,44 @@ components:
         lastModifiedDateTime:
           type: string
           format: date-time
+  parameters:
+    expand:
+      name: $expand
+      in: query
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      schema:
+        type: string
+    id:
+      name: id
+      in: path
+      required: true
+      description: GUID identifier
+      schema:
+        type: string
+        format: uuid
+    companyId:
+      name: companyId
+      in: path
+      required: true
+      description: Company GUID
+      schema:
+        type: string
+        format: uuid
+    ifMatch:
+      name: If-Match
+      in: header
+      description: ETag for optimistic concurrency
+      schema:
+        type: string
+    top:
+      name: $top
+      in: query
+      schema:
+        type: integer
   securitySchemes:
     oauth2:
       type: oauth2
