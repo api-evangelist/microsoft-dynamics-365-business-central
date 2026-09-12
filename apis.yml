@@ -53,7 +53,7 @@ tags_raw:
   - Small Business
   - Mid-Market
   - Microsoft Dynamics 365
-url: https://raw.githubusercontent.com/api-evangelist/microsoft-dynamics-365-business-central/refs/heads/main/apis.yml
+url: https://www.microsoft.com/en-us/dynamics-365/products/business-central
 created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.23'
@@ -261,5 +261,5 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
-x-parent: microsoft
+x-parent: microsoft-dynamics-365
 x-relationship: product
