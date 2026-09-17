@@ -153,66 +153,6 @@ apis:
     url: >-
       https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
 - aid: >-
-    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-purchaseorders-api
-  name: Microsoft Dynamics 365 Business Central PurchaseOrders API
-  description: Purchase order documents
-  humanURL: >-
-    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
-  baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
-  tags:
-  - Purchase Orders
-  tags_raw:
-  - PurchaseOrders
-  properties:
-  - type: OpenAPI
-    url: openapi/microsoft-dynamics-365-business-central-purchaseorders-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
-  - type: Authentication
-    url: >-
-      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
-- aid: >-
-    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-salesinvoices-api
-  name: Microsoft Dynamics 365 Business Central SalesInvoices API
-  description: Sales invoice documents
-  humanURL: >-
-    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
-  baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
-  tags:
-  - Sales Invoices
-  tags_raw:
-  - SalesInvoices
-  properties:
-  - type: OpenAPI
-    url: openapi/microsoft-dynamics-365-business-central-salesinvoices-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
-  - type: Authentication
-    url: >-
-      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
-- aid: >-
-    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-salesorders-api
-  name: Microsoft Dynamics 365 Business Central SalesOrders API
-  description: Sales order documents
-  humanURL: >-
-    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
-  baseURL: https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
-  tags:
-  - Sales Orders
-  tags_raw:
-  - SalesOrders
-  properties:
-  - type: OpenAPI
-    url: openapi/microsoft-dynamics-365-business-central-salesorders-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
-  - type: Authentication
-    url: >-
-      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
-- aid: >-
     microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-vendors-api
   name: Microsoft Dynamics 365 Business Central Vendors API
   description: Vendor master data
@@ -224,6 +164,60 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/microsoft-dynamics-365-business-central-vendors-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
+- aid: >-
+    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-purchase-orders-api
+  name: Microsoft Dynamics 365 Business Central Purchase Orders API
+  description: Purchase order documents
+  humanURL: >-
+    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services
+  baseURL: https://api.businesscentral.dynamics.com/v2.0/{tenant}/{environment}/ODataV4
+  tags:
+  - Purchase Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-business-central-purchase-orders-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
+- aid: >-
+    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-sales-invoices-api
+  name: Microsoft Dynamics 365 Business Central Sales Invoices API
+  description: Sales invoice documents
+  humanURL: >-
+    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services
+  baseURL: https://api.businesscentral.dynamics.com/v2.0/{tenant}/{environment}/ODataV4
+  tags:
+  - Sales Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-business-central-sales-invoices-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
+- aid: >-
+    microsoft-dynamics-365-business-central:microsoft-dynamics-365-business-central-sales-orders-api
+  name: Microsoft Dynamics 365 Business Central Sales Orders API
+  description: Sales order documents
+  humanURL: >-
+    https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services
+  baseURL: https://api.businesscentral.dynamics.com/v2.0/{tenant}/{environment}/ODataV4
+  tags:
+  - Sales Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-business-central-sales-orders-api-openapi.yml
   - type: Documentation
     url: >-
       https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
