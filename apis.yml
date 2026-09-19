@@ -91,6 +91,10 @@ apis:
   tags:
   - Administration
   - Tenant Management
+  - Environment
+  tags_raw:
+  - Administration
+  - Tenant Management
   - Environments
   properties:
   - type: Documentation
