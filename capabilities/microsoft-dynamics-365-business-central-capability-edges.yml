@@ -14,7 +14,8 @@ capability_model:
 edge_count: 3
 edges:
 - tag: PurchaseOrders
-  spec_file: microsoft-dynamics-365-business-central-purchaseorders-api-openapi.yml
+  spec_file: microsoft-dynamics-365-business-central-purchase-orders-api-openapi.yml
+  reanchored_from: microsoft-dynamics-365-business-central-purchaseorders-api-openapi.yml
   capability_id: BC-500.30
   capability_id_l1: BC-500
   capability_name: Purchase Order Management
@@ -23,7 +24,8 @@ edges:
   reason: Operations create and list purchase orders in an ERP, which is directly purchase order management
     within procurement.
 - tag: SalesInvoices
-  spec_file: microsoft-dynamics-365-business-central-salesinvoices-api-openapi.yml
+  spec_file: microsoft-dynamics-365-business-central-sales-invoices-api-openapi.yml
+  reanchored_from: microsoft-dynamics-365-business-central-salesinvoices-api-openapi.yml
   capability_id: BC-200.30
   capability_id_l1: BC-200
   capability_name: Accounts Receivable Management
