@@ -1,0 +1,19 @@
+# Rate limits transcribed from the provider's own documentation — see provenance. Quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://learn.microsoft.com/en-us/dotnet/core/extensions/http-ratelimiter
+sources:
+- https://learn.microsoft.com/en-us/dotnet/core/extensions/http-ratelimiter
+provenance:
+  tool: planning/api-economics/harvest_ratelimits.py
+  run: 20260920T133210
+  grounding: every limit_text was found verbatim in the fetched page text
+published: false
+note: This is a .NET developer tutorial on implementing a client-side rate-limiting HTTP handler, not
+  provider API rate-limit documentation. Numbers shown (e.g., 1,000 requests per minute, token limit 8)
+  are hypothetical code sample values, not published API limits.
+limit_count: 0
+limits: []
+headers:
+- Retry-After
+exceeded_status: 429

@@ -229,6 +229,8 @@ apis:
     url: >-
       https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
 common:
+  - type: RateLimits
+    url: rate-limits/microsoft-dynamics-365-business-central-rate-limits.yml
   - type: Plans
     url: plans/microsoft-dynamics-365-business-central-plans-pricing.yml
   - type: CapabilityMap
