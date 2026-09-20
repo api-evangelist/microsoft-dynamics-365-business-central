@@ -10,6 +10,11 @@ provenance:
   grounding: every price_text was found verbatim in the fetched page text
 audience: business-product
 pricing_basis: per-seat
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-09-20'
+  managed_tier: Dynamics 365 Business Central Team Members
 published: true
 note: Seat-based plan prices listed in USD paid yearly; Copilot Credits priced separately with no numeric
   rate shown. Page notes 'Save up to 20% with an upfront purchase of Copilot Credit Commit Units' and
