@@ -229,6 +229,8 @@ apis:
     url: >-
       https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication
 common:
+  - type: Plans
+    url: plans/microsoft-dynamics-365-business-central-plans-pricing.yml
   - type: CapabilityMap
     url: capabilities/microsoft-dynamics-365-business-central-capability-edges.yml
     name: Microsoft Dynamics 365 Business Central Business Capability Map

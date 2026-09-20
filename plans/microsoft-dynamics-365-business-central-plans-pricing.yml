@@ -1,0 +1,51 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://www.microsoft.com/en-us/dynamics-365/products/business-central/pricing
+sources:
+- https://www.microsoft.com/en-us/dynamics-365/products/business-central/pricing
+provenance:
+  tool: planning/api-economics/harvest_pricing.py
+  run: 20260920T120546
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: per-seat
+published: true
+note: Seat-based plan prices listed in USD paid yearly; Copilot Credits priced separately with no numeric
+  rate shown. Page notes 'Save up to 20% with an upfront purchase of Copilot Credit Commit Units' and
+  a $200.00 Azure free account credit.
+plan_count: 6
+currency: USD
+plans:
+- name: Dynamics 365 Business Central free trial
+  price_text: Free
+  period: none
+  included_quota: Get a free 30-day trial.
+- name: Dynamics 365 Business Central Essentials
+  price_text: $80.00 user/month, paid yearly
+  price: 80
+  currency: USD
+  period: month
+  unit: user
+- name: Dynamics 365 Business Central Premium
+  price_text: $110.00 user/month, paid yearly
+  price: 110
+  currency: USD
+  period: month
+  unit: user
+  included_quota: Includes everything in the Essentials plan
+- name: Dynamics 365 Business Central Team Members
+  price_text: $8.00 user/month, paid yearly
+  price: 8
+  currency: USD
+  period: month
+  unit: user
+- name: Microsoft Copilot Studio pre-purchase plan
+  price_text: Pre-purchase plan
+  period: none
+  unit: Copilot Credit Commit Units
+  overage: Automatic pay-as-you-go coverage when prepaid credits run out
+- name: Microsoft Copilot Studio pay-as-you-go
+  price_text: Pay-as-you-go
+  period: per-use
+  unit: Copilot Credits
