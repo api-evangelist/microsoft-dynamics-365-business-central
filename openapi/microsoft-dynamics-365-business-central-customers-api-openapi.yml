@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Microsoft Dynamics 365 Business Central API v2.0 Companies Customers API
+  title: Microsoft Dynamics 365 Business Central API v2.0 Customers…
   description: 'Standard REST API (v2.0) for Microsoft Dynamics 365 Business Central.
 
     Exposes Business Central entities such as companies, customers, vendors,
@@ -14,9 +14,7 @@ info:
 
     URLs follow the pattern:
 
-    https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
-
-    '
+    https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0'
   version: v2.0
   contact:
     name: Kin Lane
@@ -123,6 +121,44 @@ paths:
         '204':
           description: No Content
 components:
+  parameters:
+    filter:
+      name: $filter
+      in: query
+      schema:
+        type: string
+    ifMatch:
+      name: If-Match
+      in: header
+      description: ETag for optimistic concurrency
+      schema:
+        type: string
+    companyId:
+      name: companyId
+      in: path
+      required: true
+      description: Company GUID
+      schema:
+        type: string
+        format: uuid
+    expand:
+      name: $expand
+      in: query
+      schema:
+        type: string
+    top:
+      name: $top
+      in: query
+      schema:
+        type: integer
+    id:
+      name: id
+      in: path
+      required: true
+      description: GUID identifier
+      schema:
+        type: string
+        format: uuid
   schemas:
     CustomerCollection:
       type: object
@@ -188,44 +224,6 @@ components:
         lastModifiedDateTime:
           type: string
           format: date-time
-  parameters:
-    expand:
-      name: $expand
-      in: query
-      schema:
-        type: string
-    filter:
-      name: $filter
-      in: query
-      schema:
-        type: string
-    id:
-      name: id
-      in: path
-      required: true
-      description: GUID identifier
-      schema:
-        type: string
-        format: uuid
-    companyId:
-      name: companyId
-      in: path
-      required: true
-      description: Company GUID
-      schema:
-        type: string
-        format: uuid
-    ifMatch:
-      name: If-Match
-      in: header
-      description: ETag for optimistic concurrency
-      schema:
-        type: string
-    top:
-      name: $top
-      in: query
-      schema:
-        type: integer
   securitySchemes:
     oauth2:
       type: oauth2

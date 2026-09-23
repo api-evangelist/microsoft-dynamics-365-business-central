@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Microsoft Dynamics 365 Business Central API v2.0 Companies Sales Orders API
+  title: Microsoft Dynamics 365 Business Central API v2.0 Purchase…
   description: 'Standard REST API (v2.0) for Microsoft Dynamics 365 Business Central.
 
     Exposes Business Central entities such as companies, customers, vendors,
@@ -14,9 +14,7 @@ info:
 
     URLs follow the pattern:
 
-    https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
-
-    '
+    https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0'
   version: v2.0
   contact:
     name: Kin Lane
@@ -34,15 +32,15 @@ servers:
 security:
 - oauth2: []
 tags:
-- name: SalesOrders
-  description: Sales order documents
+- name: Purchase Orders
+  description: Purchase order documents
 paths:
-  /companies({companyId})/salesOrders:
+  /companies({companyId})/purchaseOrders:
     get:
       tags:
-      - SalesOrders
-      summary: List sales orders
-      operationId: salesOrders_list
+      - Purchase Orders
+      summary: List purchase orders
+      operationId: purchaseOrders_list
       parameters:
       - $ref: '#/components/parameters/companyId'
       responses:
@@ -50,9 +48,9 @@ paths:
           description: OK
     post:
       tags:
-      - SalesOrders
-      summary: Create a sales order
-      operationId: salesOrders_create
+      - Purchase Orders
+      summary: Create a purchase order
+      operationId: purchaseOrders_create
       parameters:
       - $ref: '#/components/parameters/companyId'
       requestBody:
@@ -64,69 +62,13 @@ paths:
       responses:
         '201':
           description: Created
-  /companies({companyId})/salesOrders({id}):
-    get:
-      tags:
-      - SalesOrders
-      summary: Get a sales order
-      operationId: salesOrders_get
-      parameters:
-      - $ref: '#/components/parameters/companyId'
-      - $ref: '#/components/parameters/id'
-      responses:
-        '200':
-          description: OK
-    patch:
-      tags:
-      - SalesOrders
-      summary: Update a sales order
-      operationId: salesOrders_update
-      parameters:
-      - $ref: '#/components/parameters/companyId'
-      - $ref: '#/components/parameters/id'
-      - $ref: '#/components/parameters/ifMatch'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-      responses:
-        '200':
-          description: OK
-    delete:
-      tags:
-      - SalesOrders
-      summary: Delete a sales order
-      operationId: salesOrders_delete
-      parameters:
-      - $ref: '#/components/parameters/companyId'
-      - $ref: '#/components/parameters/id'
-      - $ref: '#/components/parameters/ifMatch'
-      responses:
-        '204':
-          description: No Content
 components:
   parameters:
-    ifMatch:
-      name: If-Match
-      in: header
-      description: ETag for optimistic concurrency
-      schema:
-        type: string
     companyId:
       name: companyId
       in: path
       required: true
       description: Company GUID
-      schema:
-        type: string
-        format: uuid
-    id:
-      name: id
-      in: path
-      required: true
-      description: GUID identifier
       schema:
         type: string
         format: uuid

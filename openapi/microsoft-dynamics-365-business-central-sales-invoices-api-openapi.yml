@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Microsoft Dynamics 365 Business Central API v2.0 Companies Sales Invoices API
+  title: Microsoft Dynamics 365 Business Central API v2.0 Sales…
   description: 'Standard REST API (v2.0) for Microsoft Dynamics 365 Business Central.
 
     Exposes Business Central entities such as companies, customers, vendors,
@@ -14,9 +14,7 @@ info:
 
     URLs follow the pattern:
 
-    https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
-
-    '
+    https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0'
   version: v2.0
   contact:
     name: Kin Lane
@@ -34,13 +32,13 @@ servers:
 security:
 - oauth2: []
 tags:
-- name: SalesInvoices
+- name: Sales Invoices
   description: Sales invoice documents
 paths:
   /companies({companyId})/salesInvoices:
     get:
       tags:
-      - SalesInvoices
+      - Sales Invoices
       summary: List sales invoices
       operationId: salesInvoices_list
       parameters:
@@ -50,7 +48,7 @@ paths:
           description: OK
     post:
       tags:
-      - SalesInvoices
+      - Sales Invoices
       summary: Create a sales invoice
       operationId: salesInvoices_create
       parameters:

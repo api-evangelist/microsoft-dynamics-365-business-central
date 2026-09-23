@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Microsoft Dynamics 365 Business Central API v2.0 Companies API
+  title: Microsoft Dynamics 365 Business Central API v2.0 Companies…
   description: 'Standard REST API (v2.0) for Microsoft Dynamics 365 Business Central.
 
     Exposes Business Central entities such as companies, customers, vendors,
@@ -14,9 +14,7 @@ info:
 
     URLs follow the pattern:
 
-    https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0
-
-    '
+    https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0'
   version: v2.0
   contact:
     name: Kin Lane
