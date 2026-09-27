@@ -122,15 +122,27 @@ paths:
           description: No Content
 components:
   parameters:
-    filter:
-      name: $filter
+    id:
+      name: id
+      in: path
+      required: true
+      description: GUID identifier
+      schema:
+        type: string
+        format: uuid
+    top:
+      name: $top
+      in: query
+      schema:
+        type: integer
+    expand:
+      name: $expand
       in: query
       schema:
         type: string
-    ifMatch:
-      name: If-Match
-      in: header
-      description: ETag for optimistic concurrency
+    filter:
+      name: $filter
+      in: query
       schema:
         type: string
     companyId:
@@ -141,32 +153,13 @@ components:
       schema:
         type: string
         format: uuid
-    expand:
-      name: $expand
-      in: query
+    ifMatch:
+      name: If-Match
+      in: header
+      description: ETag for optimistic concurrency
       schema:
         type: string
-    top:
-      name: $top
-      in: query
-      schema:
-        type: integer
-    id:
-      name: id
-      in: path
-      required: true
-      description: GUID identifier
-      schema:
-        type: string
-        format: uuid
   schemas:
-    CustomerCollection:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Customer'
     Customer:
       type: object
       properties:
@@ -224,6 +217,13 @@ components:
         lastModifiedDateTime:
           type: string
           format: date-time
+    CustomerCollection:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Customer'
   securitySchemes:
     oauth2:
       type: oauth2

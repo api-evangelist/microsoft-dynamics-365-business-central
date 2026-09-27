@@ -106,14 +106,6 @@ paths:
           description: No Content
 components:
   parameters:
-    companyId:
-      name: companyId
-      in: path
-      required: true
-      description: Company GUID
-      schema:
-        type: string
-        format: uuid
     id:
       name: id
       in: path
@@ -128,6 +120,14 @@ components:
       description: ETag for optimistic concurrency
       schema:
         type: string
+    companyId:
+      name: companyId
+      in: path
+      required: true
+      description: Company GUID
+      schema:
+        type: string
+        format: uuid
   securitySchemes:
     oauth2:
       type: oauth2
