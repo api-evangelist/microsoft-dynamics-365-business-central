@@ -122,29 +122,6 @@ paths:
           description: No Content
 components:
   parameters:
-    id:
-      name: id
-      in: path
-      required: true
-      description: GUID identifier
-      schema:
-        type: string
-        format: uuid
-    top:
-      name: $top
-      in: query
-      schema:
-        type: integer
-    expand:
-      name: $expand
-      in: query
-      schema:
-        type: string
-    filter:
-      name: $filter
-      in: query
-      schema:
-        type: string
     companyId:
       name: companyId
       in: path
@@ -153,6 +130,29 @@ components:
       schema:
         type: string
         format: uuid
+    filter:
+      name: $filter
+      in: query
+      schema:
+        type: string
+    top:
+      name: $top
+      in: query
+      schema:
+        type: integer
+    id:
+      name: id
+      in: path
+      required: true
+      description: GUID identifier
+      schema:
+        type: string
+        format: uuid
+    expand:
+      name: $expand
+      in: query
+      schema:
+        type: string
     ifMatch:
       name: If-Match
       in: header
@@ -160,6 +160,13 @@ components:
       schema:
         type: string
   schemas:
+    CustomerCollection:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Customer'
     Customer:
       type: object
       properties:
@@ -217,13 +224,6 @@ components:
         lastModifiedDateTime:
           type: string
           format: date-time
-    CustomerCollection:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Customer'
   securitySchemes:
     oauth2:
       type: oauth2

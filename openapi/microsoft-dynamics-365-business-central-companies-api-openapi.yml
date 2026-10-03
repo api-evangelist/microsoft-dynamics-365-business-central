@@ -65,6 +65,13 @@ paths:
                 $ref: '#/components/schemas/Company'
 components:
   schemas:
+    CompanyCollection:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Company'
     Company:
       type: object
       properties:
@@ -85,13 +92,6 @@ components:
         systemModifiedAt:
           type: string
           format: date-time
-    CompanyCollection:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Company'
   parameters:
     id:
       name: id
