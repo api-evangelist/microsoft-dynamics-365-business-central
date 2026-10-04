@@ -122,24 +122,16 @@ paths:
           description: No Content
 components:
   parameters:
-    companyId:
-      name: companyId
-      in: path
-      required: true
-      description: Company GUID
+    expand:
+      name: $expand
+      in: query
       schema:
         type: string
-        format: uuid
     filter:
       name: $filter
       in: query
       schema:
         type: string
-    top:
-      name: $top
-      in: query
-      schema:
-        type: integer
     id:
       name: id
       in: path
@@ -148,17 +140,25 @@ components:
       schema:
         type: string
         format: uuid
-    expand:
-      name: $expand
-      in: query
-      schema:
-        type: string
     ifMatch:
       name: If-Match
       in: header
       description: ETag for optimistic concurrency
       schema:
         type: string
+    top:
+      name: $top
+      in: query
+      schema:
+        type: integer
+    companyId:
+      name: companyId
+      in: path
+      required: true
+      description: Company GUID
+      schema:
+        type: string
+        format: uuid
   schemas:
     CustomerCollection:
       type: object
