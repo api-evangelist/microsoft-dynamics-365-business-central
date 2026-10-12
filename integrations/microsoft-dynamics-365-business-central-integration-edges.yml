@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/microsoft-dynamics-365-business-central/integrations
+- https://n8n.io/integrations/microsoft-dynamics-365-business-central/
+- https://composio.dev/toolkits/microsoft-dynamics-365-business-central
+- https://monid.ai/tools/microsoft-dynamics-365-business-central
+checked:
+- https://composio.dev/toolkits/microsoft-dynamics-365-business-central
+- https://monid.ai/tools/microsoft-dynamics-365-business-central
+- https://n8n.io/integrations/microsoft-dynamics-365-business-central/
+- https://zapier.com/apps/microsoft-dynamics-365-business-central/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
