@@ -106,12 +106,6 @@ paths:
           description: No Content
 components:
   parameters:
-    ifMatch:
-      name: If-Match
-      in: header
-      description: ETag for optimistic concurrency
-      schema:
-        type: string
     id:
       name: id
       in: path
@@ -128,6 +122,12 @@ components:
       schema:
         type: string
         format: uuid
+    ifMatch:
+      name: If-Match
+      in: header
+      description: ETag for optimistic concurrency
+      schema:
+        type: string
   securitySchemes:
     oauth2:
       type: oauth2
