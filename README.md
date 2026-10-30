@@ -1,4 +1,4 @@
-# Microsoft Dynamics 365 Business Central (microsoft-dynamics-365-business-central)
+# Microsoft Dynamics 365 Business Central
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,102 +66,134 @@
 
 Microsoft Dynamics 365 Business Central is an all-in-one cloud ERP solution for small and mid-sized businesses that brings together finance, sales, service, project management, supply chain, manufacturing, and operations on the Microsoft Cloud. Business Central exposes a standard REST API (v2.0) plus custom and OData web services so partners can build Connect apps, automate processes, and integrate Business Central with Power Platform and third-party systems using OAuth 2.0 authentication via Microsoft Entra ID.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/microsoft-dynamics-365-business-central/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/microsoft-dynamics-365-business-central/refs/heads/main/apis.yml)
+**Areas:** ERP · Cloud ERP · Finance · Accounting · Supply Chain · Small Business · Mid-Market · Microsoft Dynamics 365
 
-## Scope
+## Microsoft Dynamics 365 Business Central on APIs.io
 
-- **Type:** Index
+Everything profiled for Microsoft Dynamics 365 Business Central is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/microsoft-dynamics-365-business-central/](https://apis.io/providers/microsoft-dynamics-365-business-central/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (9)
 
-- ERP
-- Cloud ERP
-- Finance
-- Accounting
-- Supply Chain
-- Operations
-- Small Business
-- Mid-Market
-- Microsoft Dynamics 365
+- [Business Central OData Web Services](https://apis.io/apis/microsoft-dynamics-365-business-central/odata-web-services/) — OData v4 endpoints exposing published Business Central pages and queries as web services for custom integrations, reporting, and Power Platform connectors…
+- [Business Central Administration Center API](https://apis.io/apis/microsoft-dynamics-365-business-central/admin-center-api/) — Administration Center REST API for managing Business Central environments, tenants, telemetry, update settings, and notifications programmatically for ISVs…
+- [Microsoft Dynamics 365 Business Central Companies API](https://apis.io/apis/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-companies-api/) — Business Central company entities
+- [Microsoft Dynamics 365 Business Central Customers API](https://apis.io/apis/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-customers-api/) — Customer master data
+- [Microsoft Dynamics 365 Business Central Items API](https://apis.io/apis/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-items-api/) — Item master data
+- [Microsoft Dynamics 365 Business Central Vendors API](https://apis.io/apis/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-vendors-api/) — Vendor master data
+- [Microsoft Dynamics 365 Business Central Purchase Orders API](https://apis.io/apis/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-purchase-orders-api/) — Purchase order documents
+- [Microsoft Dynamics 365 Business Central Sales Invoices API](https://apis.io/apis/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-sales-invoices-api/) — Sales invoice documents
+- [Microsoft Dynamics 365 Business Central Sales Orders API](https://apis.io/apis/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-sales-orders-api/) — Sales order documents
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-11
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Business Central API (v2.0)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Standard REST API (v2.0) for Dynamics 365 Business Central exposing entities such as customers, vendors, items, sales and purchase documents, and journals. Authenticates with OAuth 2.0 via Microsoft Entra ID and supports both delegated user and service-to-service flows.
+- [Microsoft Dynamics 365 Business Central Agentic Access](https://apis.io/agentic-access/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-agentic-access/)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/)
-- **Base URL:** `https://api.businesscentral.dynamics.com/v2.0/{environment}/api/v2.0`
+#### Collections (8)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- REST
-- OAuth 2.0
-- Entra ID
-- Connect Apps
-- Standard Entities
+- [Microsoft Dynamics 365 Business Central API v2.0](https://apis.io/collections/microsoft-dynamics-365-business-central/open-microsoft-dynamics-365-business-central/)
+- [Microsoft Dynamics 365 Business Central API v2.0 Companies API](https://apis.io/collections/microsoft-dynamics-365-business-central/open-microsoft-dynamics-365-business-central-companies-api/)
+- [Microsoft Dynamics 365 Business Central API v2.0 Companies Customers API](https://apis.io/collections/microsoft-dynamics-365-business-central/open-microsoft-dynamics-365-business-central-customers-api/)
+- [Microsoft Dynamics 365 Business Central API v2.0 Companies Items API](https://apis.io/collections/microsoft-dynamics-365-business-central/open-microsoft-dynamics-365-business-central-items-api/)
+- [Microsoft Dynamics 365 Business Central API v2.0 Companies PurchaseOrders API](https://apis.io/collections/microsoft-dynamics-365-business-central/open-microsoft-dynamics-365-business-central-purchaseorders-api/)
+- [Microsoft Dynamics 365 Business Central API v2.0 Companies SalesInvoices API](https://apis.io/collections/microsoft-dynamics-365-business-central/open-microsoft-dynamics-365-business-central-salesinvoices-api/)
+- [Microsoft Dynamics 365 Business Central API v2.0 Companies SalesOrders API](https://apis.io/collections/microsoft-dynamics-365-business-central/open-microsoft-dynamics-365-business-central-salesorders-api/)
+- [Microsoft Dynamics 365 Business Central API v2.0 Companies Vendors API](https://apis.io/collections/microsoft-dynamics-365-business-central/open-microsoft-dynamics-365-business-central-vendors-api/)
 
-#### Properties
+#### Security (4)
 
-- [Documentation](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/)
-- [OpenAPI](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/dynamics-open-api) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Authentication](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/automation-apis-using-s2s-authentication)
-- [Postman Collection](collections/microsoft-dynamics-365-business-central.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-business-central.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Business Central OData Web Services
+- [Microsoft Dynamics 365 Business Central Authentication](https://apis.io/security/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-authentication/)
+- [Microsoft Dynamics 365 Business Central Domain Security](https://apis.io/security/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-domain-security/)
+- [Microsoft Dynamics 365 Business Central Trust Center](https://apis.io/security/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-trust-center/)
+- [Microsoft Dynamics 365 Business Central Vulnerability Disclosure](https://apis.io/security/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-vulnerability-disclosure/)
 
-OData v4 endpoints exposing published Business Central pages and queries as web services for custom integrations, reporting, and Power Platform connectors when standard API v2.0 entities are insufficient.
+#### OAuth scopes (1)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services)
-- **Base URL:** `https://api.businesscentral.dynamics.com/v2.0/{tenant}/{environment}/ODataV4`
+The permissions the API asks for.
 
-#### Tags
+- [Microsoft Dynamics 365 Business Central Scopes](https://apis.io/scopes/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-scopes/)
 
-- OData
-- Web Services
-- Pages
-- Queries
+#### Plans and pricing (2)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Documentation](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-web-services)
-- [Postman Collection](collections/microsoft-dynamics-365-business-central.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-business-central.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Microsoft Dynamics 365 Business Central Plans Pricing](https://apis.io/plans/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-plans-pricing/)
+- [Microsoft Dynamics 365 Business Central Price Estimates](https://apis.io/plans/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-price-estimates/)
 
-### Business Central Administration Center API
+#### Rate limits (1)
 
-Administration Center REST API for managing Business Central environments, tenants, telemetry, update settings, and notifications programmatically for ISVs and delegated administrators.
+Published request limits.
 
-- **Human URL:** [https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-center-api](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-center-api)
-- **Base URL:** `https://api.businesscentral.dynamics.com/admin/v2.x`
+- [Microsoft Dynamics 365 Business Central Rate Limits](https://apis.io/rate-limits/microsoft-dynamics-365-business-central/microsoft-dynamics-365-business-central-rate-limits/)
 
-#### Tags
+## Where to find this API
 
-- Administration
-- Tenant Management
-- Environments
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-center-api)
-- [Postman Collection](collections/microsoft-dynamics-365-business-central.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-business-central.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/microsoft)
 - [Website](https://www.microsoft.com/en-us/dynamics-365/products/business-central)
 - [Documentation](https://learn.microsoft.com/en-us/dynamics365/business-central/)
 - [Pricing](https://www.microsoft.com/en-us/dynamics-365/products/business-central/pricing)
-- [Sign Up](https://signup.microsoft.com/get-started/signup?products=22b1949b-c5dd-4b06-9c19-1d2fa17e7a9d)
+- [Blog](https://www.microsoft.com/en-us/dynamics-365/blog/feed/)
+- [GitHub](https://github.com/microsoft)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 38.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 45.3 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 63.2 |
+
+**Agent readiness 24.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 32.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/microsoft-dynamics-365-business-central/](https://apis.io/providers/microsoft-dynamics-365-business-central/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Microsoft Dynamics 365 Business Central: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/microsoft-dynamics-365-business-central/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
